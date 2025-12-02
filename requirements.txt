@@ -1,0 +1,20 @@
+# AMORE: Adaptive Multi-agent Orchestration
+# Python dependencies
+
+# Core scientific computing
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+
+# Optional: For full implementation
+# openai>=1.0.0          # OpenAI API client
+# anthropic>=0.5.0       # Anthropic API client
+# chromadb>=0.4.0        # Vector database for episodic memory
+# neo4j>=5.0.0           # Graph database for semantic memory
+# sentence-transformers>=2.2.0  # Embedding models
+# tiktoken>=0.5.0        # Token counting
+
+# Development
+# pytest>=7.0.0
+# black>=23.0.0
+# flake8>=6.0.0

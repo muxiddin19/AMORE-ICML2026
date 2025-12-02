@@ -1,0 +1,368 @@
+{
+  "benchmark_name": "MARS",
+  "full_name": "Multi-Agent Reasoning Suite",
+  "version": "1.0",
+  "description": "A comprehensive benchmark for evaluating adaptive multi-agent orchestration in complex reasoning tasks",
+  "total_tasks": 2847,
+  "categories": {
+    "scientific_research": {
+      "count": 847,
+      "domains": {
+        "biology": 284,
+        "physics": 198,
+        "computer_science": 212,
+        "chemistry": 153
+      },
+      "task_types": {
+        "literature_review": 0.35,
+        "methodology_analysis": 0.25,
+        "gap_identification": 0.20,
+        "hypothesis_generation": 0.20
+      },
+      "complexity_distribution": {
+        "low": 0.05,
+        "medium_low": 0.15,
+        "medium": 0.30,
+        "medium_high": 0.35,
+        "high": 0.15
+      },
+      "avg_subtasks": 12.3,
+      "subtask_range": [8, 18]
+    },
+    "software_engineering": {
+      "count": 1124,
+      "domains": {
+        "web_development": 412,
+        "systems_programming": 298,
+        "ml_engineering": 248,
+        "devops": 166
+      },
+      "task_types": {
+        "bug_localization_fix": 0.30,
+        "code_review": 0.25,
+        "feature_implementation": 0.25,
+        "test_generation": 0.20
+      },
+      "complexity_distribution": {
+        "low": 0.15,
+        "medium_low": 0.25,
+        "medium": 0.30,
+        "medium_high": 0.20,
+        "high": 0.10
+      },
+      "avg_subtasks": 8.7,
+      "subtask_range": [5, 15]
+    },
+    "strategic_planning": {
+      "count": 876,
+      "domains": {
+        "business_strategy": 324,
+        "policy_analysis": 287,
+        "product_design": 265
+      },
+      "task_types": {
+        "market_analysis": 0.30,
+        "decision_synthesis": 0.25,
+        "risk_assessment": 0.25,
+        "scenario_planning": 0.20
+      },
+      "complexity_distribution": {
+        "low": 0.02,
+        "medium_low": 0.08,
+        "medium": 0.25,
+        "medium_high": 0.40,
+        "high": 0.25
+      },
+      "avg_subtasks": 15.1,
+      "subtask_range": [10, 22]
+    }
+  },
+  "evaluation_metrics": {
+    "primary": {
+      "task_success_rate": {
+        "description": "Fraction of tasks where >=80% of subtasks succeed",
+        "formula": "successful_tasks / total_tasks"
+      },
+      "subtask_success_rate": {
+        "description": "Fraction of successfully completed subtasks",
+        "formula": "successful_subtasks / total_subtasks"
+      }
+    },
+    "orchestration": {
+      "orchestration_accuracy": {
+        "description": "How often the system selects the optimal orchestration pattern",
+        "formula": "correct_pattern_selections / total_subtasks"
+      },
+      "adaptation_rate": {
+        "description": "Success rate of mid-execution adaptations",
+        "formula": "successful_adaptations / adaptation_attempts"
+      },
+      "escalation_efficiency": {
+        "description": "How often escalations lead to success",
+        "formula": "successful_escalations / total_escalations"
+      }
+    },
+    "memory": {
+      "memory_utilization": {
+        "description": "Fraction of retrieved memories that are actually used",
+        "formula": "used_memories / retrieved_memories"
+      },
+      "consolidation_rate": {
+        "description": "Fraction of episodic memories promoted to semantic",
+        "formula": "consolidated_entries / total_episodic_entries"
+      }
+    },
+    "efficiency": {
+      "cost_efficiency": {
+        "description": "Success rate normalized by API cost",
+        "formula": "success_rate / average_cost"
+      },
+      "trajectory_length": {
+        "description": "Average number of steps to complete a task",
+        "formula": "total_steps / completed_tasks"
+      },
+      "latency": {
+        "description": "Average time to complete a task",
+        "unit": "seconds"
+      }
+    }
+  },
+  "tool_pool": [
+    "web_search",
+    "code_executor",
+    "file_reader",
+    "file_writer",
+    "database_query",
+    "api_call",
+    "calculator",
+    "text_analyzer",
+    "image_processor",
+    "document_generator",
+    "email_sender",
+    "git_operations",
+    "test_runner",
+    "static_analyzer",
+    "memory_retrieval"
+  ],
+  "orchestration_patterns": {
+    "single": {
+      "description": "Single agent handles the subtask independently",
+      "typical_agents": 1,
+      "relative_cost": 1.0,
+      "relative_latency": 1.0,
+      "best_for": ["simple tasks", "clear requirements", "no parallelization benefit"]
+    },
+    "parallel": {
+      "description": "Multiple agents work independently on different aspects",
+      "typical_agents": "2-3",
+      "relative_cost": 2.0,
+      "relative_latency": 1.0,
+      "best_for": ["data gathering", "independent subtask components", "coverage tasks"]
+    },
+    "hierarchical": {
+      "description": "Supervisor delegates to and coordinates specialized workers",
+      "typical_agents": "3-5",
+      "relative_cost": "3-5x",
+      "relative_latency": 2.0,
+      "best_for": ["complex coordination", "quality review", "multi-step processes"]
+    },
+    "consensus": {
+      "description": "Multiple agents deliberate and vote to reach agreement",
+      "typical_agents": "3+",
+      "relative_cost": "5-10x",
+      "relative_latency": 3.0,
+      "best_for": ["critical decisions", "high uncertainty", "multiple valid perspectives"]
+    }
+  },
+  "annotation_guidelines": {
+    "complexity_levels": {
+      "low": {
+        "score_range": [0.0, 0.3],
+        "characteristics": ["single step", "clear inputs/outputs", "no ambiguity"],
+        "typical_pattern": "single"
+      },
+      "medium_low": {
+        "score_range": [0.3, 0.45],
+        "characteristics": ["few steps", "some tool use", "minimal coordination"],
+        "typical_pattern": "single or parallel"
+      },
+      "medium": {
+        "score_range": [0.45, 0.6],
+        "characteristics": ["multiple steps", "tool diversity", "some dependencies"],
+        "typical_pattern": "parallel or hierarchical"
+      },
+      "medium_high": {
+        "score_range": [0.6, 0.75],
+        "characteristics": ["many steps", "complex dependencies", "expert knowledge"],
+        "typical_pattern": "hierarchical"
+      },
+      "high": {
+        "score_range": [0.75, 1.0],
+        "characteristics": ["very complex", "high uncertainty", "synthesis required"],
+        "typical_pattern": "hierarchical or consensus"
+      }
+    },
+    "inter_annotator_agreement": {
+      "metric": "Cohen's kappa",
+      "threshold": 0.75,
+      "achieved": 0.78
+    }
+  },
+  "example_tasks": [
+    {
+      "id": "sci_research_001",
+      "category": "scientific_research",
+      "domain": "computer_science",
+      "description": "Conduct a systematic review of transformer efficiency techniques published since 2022. Identify the top 5 approaches by computational savings and propose a novel combination.",
+      "complexity_level": "high",
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "description": "Search for papers on transformer efficiency from major venues",
+          "optimal_pattern": "parallel",
+          "complexity": 0.35
+        },
+        {
+          "id": "sub_002",
+          "description": "Filter and categorize papers by technique type",
+          "optimal_pattern": "single",
+          "complexity": 0.40
+        },
+        {
+          "id": "sub_003",
+          "description": "Extract quantitative efficiency metrics from each paper",
+          "optimal_pattern": "parallel",
+          "complexity": 0.50
+        },
+        {
+          "id": "sub_004",
+          "description": "Analyze and compare approaches",
+          "optimal_pattern": "hierarchical",
+          "complexity": 0.70
+        },
+        {
+          "id": "sub_005",
+          "description": "Identify complementary techniques",
+          "optimal_pattern": "hierarchical",
+          "complexity": 0.75
+        },
+        {
+          "id": "sub_006",
+          "description": "Propose novel combination with rationale",
+          "optimal_pattern": "consensus",
+          "complexity": 0.85
+        },
+        {
+          "id": "sub_007",
+          "description": "Write comprehensive review document",
+          "optimal_pattern": "single",
+          "complexity": 0.55
+        }
+      ]
+    },
+    {
+      "id": "swe_debug_001",
+      "category": "software_engineering",
+      "domain": "web_development",
+      "description": "Debug the performance regression in the authentication module introduced in recent commits. Implement fix and add regression tests.",
+      "complexity_level": "medium_high",
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "description": "Analyze recent commits for potential causes",
+          "optimal_pattern": "single",
+          "complexity": 0.45
+        },
+        {
+          "id": "sub_002",
+          "description": "Profile authentication endpoints",
+          "optimal_pattern": "single",
+          "complexity": 0.50
+        },
+        {
+          "id": "sub_003",
+          "description": "Identify specific bottleneck code",
+          "optimal_pattern": "hierarchical",
+          "complexity": 0.65
+        },
+        {
+          "id": "sub_004",
+          "description": "Implement performance fix",
+          "optimal_pattern": "single",
+          "complexity": 0.55
+        },
+        {
+          "id": "sub_005",
+          "description": "Write unit and integration tests",
+          "optimal_pattern": "parallel",
+          "complexity": 0.45
+        },
+        {
+          "id": "sub_006",
+          "description": "Review fix for correctness and completeness",
+          "optimal_pattern": "consensus",
+          "complexity": 0.60
+        }
+      ]
+    },
+    {
+      "id": "strategy_001",
+      "category": "strategic_planning",
+      "domain": "business_strategy",
+      "description": "Develop a market entry strategy for a fintech startup targeting Southeast Asian markets.",
+      "complexity_level": "high",
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "description": "Research market size and growth in target countries",
+          "optimal_pattern": "parallel",
+          "complexity": 0.45
+        },
+        {
+          "id": "sub_002",
+          "description": "Analyze competitive landscape",
+          "optimal_pattern": "hierarchical",
+          "complexity": 0.65
+        },
+        {
+          "id": "sub_003",
+          "description": "Review regulatory requirements per country",
+          "optimal_pattern": "parallel",
+          "complexity": 0.55
+        },
+        {
+          "id": "sub_004",
+          "description": "Identify target customer segments",
+          "optimal_pattern": "hierarchical",
+          "complexity": 0.70
+        },
+        {
+          "id": "sub_005",
+          "description": "Develop pricing and positioning strategy",
+          "optimal_pattern": "consensus",
+          "complexity": 0.80
+        },
+        {
+          "id": "sub_006",
+          "description": "Create go-to-market timeline",
+          "optimal_pattern": "hierarchical",
+          "complexity": 0.65
+        },
+        {
+          "id": "sub_007",
+          "description": "Assess risks and develop mitigation plans",
+          "optimal_pattern": "consensus",
+          "complexity": 0.85
+        },
+        {
+          "id": "sub_008",
+          "description": "Synthesize final strategy document",
+          "optimal_pattern": "single",
+          "complexity": 0.60
+        }
+      ]
+    }
+  ],
+  "license": "Apache-2.0",
+  "citation": "Anonymous et al. AMORE: Adaptive Multi-agent Orchestration. ICML 2026."
+}
