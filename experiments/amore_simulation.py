@@ -9,7 +9,7 @@ This module provides:
 4. Benchmark evaluation on simulated tasks
 5. Statistical analysis and result generation
 
-Author: ICML 2026 Submission
+Author: 2026 Submission
 """
 
 import numpy as np
