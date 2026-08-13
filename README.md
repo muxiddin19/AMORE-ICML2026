@@ -1,4 +1,4 @@
-# When Should Agents Collaborate? AMORE: Adaptive Multi-Agent Orchestration for Reasoning and Execution
+# When Should Agents Collaborate? Amore: Adaptive Multi-Agent Orchestration with Reflective Execution
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://python.org)
