@@ -1,6 +1,6 @@
 """
 AMORE Experiment Runner
-Generates all experimental results for the ICML 2026 paper
+Generates all experimental results for the paper
 
 This script:
 1. Runs comprehensive experiments on MARS benchmark
@@ -1256,7 +1256,7 @@ def generate_table_proxy_implementations():
     print("-"*50)
     print("R(s, p, o) = 0.5 * Quality + 0.2 * (1 - NormCost) + 0.3 * Success")
 
-    print("\nCode Available: https://anonymous.4open.science/r/AMORE-ICML2026-FB66/proxies/")
+    print("\nCode Available: https://anonymous.4open.science/r/AMORE/proxies/")
 
     return df
 
@@ -1394,7 +1394,7 @@ def main():
     """Main function to generate all experimental results"""
     print("="*70)
     print("AMORE: Experimental Results Generation")
-    print("ICML 2026 Paper")
+    print("Paper")
     print("="*70)
 
     # Generate all tables
