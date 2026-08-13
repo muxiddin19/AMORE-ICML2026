@@ -1,5 +1,5 @@
 """
-Learned Quality Estimator for AMORE
+Learned Quality Estimator for AMORE  
 Addressing Reviewer Concern: Replace LLM-as-Judge with Learned/Hybrid Quality Model
 
 This module provides:
