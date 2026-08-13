@@ -1,6 +1,6 @@
 """
 Additional Experiments and Ablations for AMORE
-ICML 2026 Paper - Extended Experimental Analysis
+ Extended Experimental Analysis
 
 This script generates:
 1. Sensitivity analysis for hyperparameters
@@ -667,7 +667,7 @@ def run_all_additional_experiments():
     """Run all additional experiments and save results."""
     print("="*70)
     print("AMORE: Additional Experiments and Ablations")
-    print("ICML 2026 Paper - Extended Analysis")
+    print(" Extended Analysis")
     print("="*70)
 
     all_results = {}
