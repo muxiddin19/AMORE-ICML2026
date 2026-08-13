@@ -162,7 +162,7 @@ Three-tier cognitive architecture:
 
 ```bibtex
 @inproceedings{anonymous2026amore,
-  title={When Should Agents Collaborate? AMORE: Adaptive Multi-Agent Orchestration for Reasoning and Execution},
+  title={When Should Agents Collaborate? Amore: Adaptive Multi-Agent Orchestration with Reflective Execution},
   author={Anonymous},
   booktitle={XXX},
   year={2026}
